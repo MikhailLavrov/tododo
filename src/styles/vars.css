@@ -1,7 +1,12 @@
 :root {
   /* Colors */
-  --base-dark-color: #000000;
-  --base-light-color: #ffffff;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --yellow-color: #f7d44c;
+  --red-color: #eb7a53;
+  --blue-color: #98b7db;
+  --green-color: #a8d672;
+  --beige-color: #f6ecc9;
 
   /* socials palette */
   --color-telegram-blue: #2aabee;

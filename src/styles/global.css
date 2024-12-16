@@ -6,8 +6,8 @@ body {
   min-height: 100%;
   scrollbar-width: thin;
   scroll-behavior: smooth;
-  background-color: var(--base-light-color);
-  color: var(--base-dark-color);
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 
 header,

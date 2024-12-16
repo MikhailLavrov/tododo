@@ -1,0 +1,43 @@
+@import '../../styles/vars.css';
+
+.welcome {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--white-color);
+
+  font-family: var(--ff-Tilda);
+  font-size: var(--fz-m);
+  font-weight: 300;
+  line-height: 1.5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 1s;
+
+  & p {
+    margin: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

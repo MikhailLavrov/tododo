@@ -1,10 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { LayoutComponent } from '../Layout/Layout';
+import { Hero } from '../Hero/Hero';
+import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage';
 
 const MainPage = () => {
   return (
     <>
-      <div>Hello world</div>
+      <WelcomeMessage />
+      <Hero />
     </>
   );
 }

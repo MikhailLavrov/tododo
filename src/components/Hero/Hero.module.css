@@ -1,0 +1,18 @@
+@import '../../styles/vars.css';
+
+.hero {
+  padding: 20px;
+  
+  font-family: var(--ff-Tilda);
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
+.hero__title {
+  margin: 0;
+
+  font-size: var(--fz-l);
+  font-weight: 300;
+  line-height: 0.8;
+  letter-spacing: 1.5px;
+}
