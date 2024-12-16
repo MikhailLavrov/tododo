@@ -11,9 +11,5 @@
 
 .navigation {
   display: flex;
-}
-
-.navigation__button {
-  padding: 10px;
-  margin-left: auto;
+  gap: 20px;
 }

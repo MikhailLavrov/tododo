@@ -1,0 +1,28 @@
+@import '../../styles/vars.css';
+
+.user {
+  padding: 5px 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  background-color: var(--white-color);
+  border-radius: 5px;
+
+  color: var(--black-color);
+}
+
+.user__avatar {
+  height: 100%;
+  width: auto;
+
+  aspect-ratio: 1/1;
+}
+
+.user__name {
+  margin: 0;
+
+  font-family: var(--ff-Tilda);
+  font-size: var(--fz-s);
+}

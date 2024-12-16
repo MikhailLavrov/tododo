@@ -1,0 +1,6 @@
+@import '../../styles/vars.css';
+
+.navigation__button {
+  padding: 10px;
+  margin-left: auto;
+}

@@ -1,18 +1,47 @@
 @import '../../styles/vars.css';
 
 .hero {
-  padding: 20px;
+  padding: 20px 0;
   
   font-family: var(--ff-Tilda);
   color: var(--white-color);
   background-color: var(--black-color);
 }
 
+.hero__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .hero__title {
   margin: 0;
+  margin-right: auto;
 
   font-size: var(--fz-l);
   font-weight: 300;
   line-height: 0.8;
   letter-spacing: 1.5px;
+}
+
+.hero__infoWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  gap: 10px;
+}
+
+.hero__date {
+  margin: 0;
+  margin-bottom: auto;
+
+  font-size: var(--fz-s);
+  opacity: 0.8;
+}
+
+.hero__tasksAmount {
+  margin: 0;
+
+  font-size: var(--fz-m);
+  font-weight: 300;
 }
