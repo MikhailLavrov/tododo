@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import c from './WelcomeMessage.module.css';
+import { useSelector } from 'react-redux';
 
 export const WelcomeMessage = () => {
   const [isVisible, setIsVisible] = useState<boolean | null>(null);
   const [greeting, setGreeting] = useState<string>('Привет');
-  const [isUser, setIsUser] = useState<string>('Tovarisch');
+  const name = useSelector((state: any) => state.user.userName);
 
   useEffect(() => {
     const isGreetingShown = sessionStorage.getItem('isGreetingShown');
@@ -41,7 +42,6 @@ export const WelcomeMessage = () => {
   }, [])
 
   if (isVisible === null) {
-    // Возвращаем null, чтобы избежать мерцания до установки видимости
     return null;
   }
 
@@ -49,7 +49,7 @@ export const WelcomeMessage = () => {
     <>
       {isVisible && (
         <div className={c.welcome}>
-          <p>{greeting}, <br /> {isUser}</p>
+          <p>{greeting}, <br /> {name}</p>
         </div>
       )}
     </>
