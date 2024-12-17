@@ -1,0 +1,41 @@
+@import '../../styles/vars.css';
+
+.category {
+  padding: 10px 0;
+
+  font-family: var(--ff-Tilda);
+  font-size: calc(var(--fz-m) - 2px);
+  color: var(--white-color);
+
+  background-color: var(--black-color);
+}
+
+.category__list {
+  margin: 0;
+  padding: 0;
+  
+  display: flex;
+  gap: 10px;
+
+  list-style: none;
+}
+
+.category__button {
+  padding: 10px;
+
+  font-size: calc(var(--fz-m) - 2px);
+  color: var(--white-color);
+  
+  border-radius: 10px;
+  background-color: transparent;
+  border-width: 2px;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    background-color: var(--black-color) !important;
+    color: var(--white-color) !important;
+    border-color: var(--white-color) !important;
+  }
+}
