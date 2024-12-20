@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tododo/static/css/main.3eec7ac0.css",
-    "main.js": "/tododo/static/js/main.33a9d21d.js",
+    "main.js": "/tododo/static/js/main.ac2d2fe9.js",
     "static/js/488.ba0bba42.chunk.js": "/tododo/static/js/488.ba0bba42.chunk.js",
     "static/media/TildaSans-Light.woff": "/tododo/static/media/TildaSans-Light.da05a6c07f6f161b6cd5.woff",
     "static/media/TildaSans-Bold.woff": "/tododo/static/media/TildaSans-Bold.7c8ed76dd091c4d3ac7d.woff",
@@ -16,11 +16,11 @@
     "static/media/ava.webp": "/tododo/static/media/ava.f668b57e3b37dfb79da7.webp",
     "index.html": "/tododo/index.html",
     "main.3eec7ac0.css.map": "/tododo/static/css/main.3eec7ac0.css.map",
-    "main.33a9d21d.js.map": "/tododo/static/js/main.33a9d21d.js.map",
+    "main.ac2d2fe9.js.map": "/tododo/static/js/main.ac2d2fe9.js.map",
     "488.ba0bba42.chunk.js.map": "/tododo/static/js/488.ba0bba42.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3eec7ac0.css",
-    "static/js/main.33a9d21d.js"
+    "static/js/main.ac2d2fe9.js"
   ]
 }
