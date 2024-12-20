@@ -11,10 +11,11 @@ interface Task {
 
 const loadTasksFromLocalStorage = () => {
   const tasksJSON = localStorage.getItem("tasks");
-  if (tasksJSON) {
-    return JSON.parse(tasksJSON);
-  }
-  return [];
+  return tasksJSON ? JSON.parse(tasksJSON) : [];
+}
+
+const saveTasksToLocalStorage = (tasks: Task[]) => {
+  localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 const initialState: Task[] = loadTasksFromLocalStorage();
@@ -25,31 +26,47 @@ const tasksSlice = createSlice({
   reducers: {
     addTask: (state, action: PayloadAction<Task>) => {
       state.unshift(action.payload);
-      localStorage.setItem("tasks", JSON.stringify(state));
+      saveTasksToLocalStorage(state);
     },
     toggleTask: (state, action: PayloadAction<number>) => {
       const task = state.find((task) => task.id === action.payload);
       if (task) {
         task.isCompleted = !task.isCompleted;
+        saveTasksToLocalStorage(state);
       }
-      localStorage.setItem("tasks", JSON.stringify(state));
     },
-    updateTask: (state, action: PayloadAction<{id: number, text: string}>) => {
-      const {id, text} = action.payload;
+    updateTask: (state, action: PayloadAction<{ id: number; text: string }>) => {
+      const { id, text } = action.payload;
       const task = state.find((task) => task.id === id);
       if (task) {
-        task.text = text;
-        task.updatedAt = new Date().toISOString();
+        if (text.trim() === '') {
+          // Если текст пустой, удаляем задачу
+          const index = state.findIndex((task) => task.id === id);
+          if (index !== -1) {
+            state.splice(index, 1);  // Удаляем задачу из состояния
+          }
+        } else if (text.trim() !== task.text) {
+          // Если текст изменился, обновляем задачу
+          task.text = text;
+          task.updatedAt = new Date().toISOString();
+        }
+        saveTasksToLocalStorage(state);
       }
-      localStorage.setItem("tasks", JSON.stringify(state));
     },
     deleteTask: (state, action: PayloadAction<number>) => {
       const updatedState = state.filter((task) => task.id !== action.payload);
-      localStorage.setItem("tasks", JSON.stringify(updatedState));
+      saveTasksToLocalStorage(updatedState);
       return updatedState;
+    },
+    deleteAllTasks: (state, action: PayloadAction<boolean>) => {
+      if (action.payload === true) {
+        localStorage.removeItem("tasks");
+        return [];
+      }
+      saveTasksToLocalStorage(state);
     },
   },
 })
 
-export const { addTask, toggleTask, updateTask, deleteTask} = tasksSlice.actions;
+export const { addTask, toggleTask, updateTask, deleteTask, deleteAllTasks} = tasksSlice.actions;
 export default tasksSlice.reducer;

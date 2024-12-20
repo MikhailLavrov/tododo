@@ -7,7 +7,7 @@ interface UserState {
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    userName: "Tovarisch",
+    userName: "Незнакомец",
   } as UserState,
   reducers: {
     setName: (state, action: PayloadAction<string>) => {

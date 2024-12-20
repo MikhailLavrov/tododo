@@ -37,4 +37,6 @@
   
   font-family: var(--ff-Tilda);
   font-size: var(--fz-s);
+  word-wrap: break-word;
+  resize: none;
 }

@@ -57,6 +57,8 @@ export const AddTaskModal: React.FC = () => {
         open={isModalOpen}
         onOk={handleAddTask}
         onCancel={handleCancel}
+        okText="Добавить"
+        cancelText="Отмена"
       >
         <div className={c.taskList__form}>
           <textarea
@@ -65,6 +67,7 @@ export const AddTaskModal: React.FC = () => {
             value={taskText}
             onChange={(e) => setTaskText(e.target.value)}
             placeholder="Введите текст новой задачи"
+            maxLength={50}
           />
         </div>
       </Modal>
