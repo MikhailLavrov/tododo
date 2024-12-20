@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import c from './Hero.module.css';
+import { useSelector } from 'react-redux';
 
 export const Hero = () => {
-  const [tasksCount, setTasksCount] = useState(0);
+  const tasks = useSelector((state: any) => state.tasks);
   const today = new Date().toLocaleDateString('ru-RU');
 
   return (
@@ -12,7 +13,7 @@ export const Hero = () => {
         <p className={c.hero__title}>Мои <br /> задачи</p>
         <div className={c.hero__infoWrapper}>
           <p className={c.hero__date}>{today}</p>
-          <p className={c.hero__tasksAmount}>Всего: {tasksCount}</p>
+          <p className={c.hero__tasksAmount}>Всего: {tasks.length}</p>
         </div>
       </div>
     </section>

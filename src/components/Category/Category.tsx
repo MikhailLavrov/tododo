@@ -26,23 +26,14 @@ const categoryData: CategoryType[] = [
   },
 ]
 
-const colorMap: Record<string, string> = {
-  all: '#f6ecc9',
-  important: '#eb7a53',
-  family: '#a8d672',
-  work: '#98b7db',
-}
-
 export const Category = () => {
   const categoryList: React.ReactNode = categoryData.map((item) => {
-    const categoryColor = colorMap[item.id] || '#fff';
 
     return (
       <li className={c.category__item} key={item.id}>
         <Button 
           className={c.category__button} 
           onClick={(e) => e.preventDefault()}
-          // style={{backgroundColor: categoryColor}}
         >
           {item.title}
         </Button>

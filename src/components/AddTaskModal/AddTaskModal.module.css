@@ -1,0 +1,40 @@
+@import '../../styles/vars.css'; 
+
+.floatButton {
+  width: 45px !important;
+  height: 45px;
+
+  border-radius: 50%;
+  background-color: var(--green-color);
+
+  position: fixed;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 50px;
+  
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .floatButton {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 80px;
+  }
+}
+
+.taskList__form {
+  display: flex;
+  align-items: center;
+}
+
+.taskList__textarea {
+  padding: 5px;
+
+  width: 100%;
+  min-height: 20vh;
+  
+  font-family: var(--ff-Tilda);
+  font-size: var(--fz-s);
+}

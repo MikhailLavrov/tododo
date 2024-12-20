@@ -1,1 +1,16 @@
 @import '../../styles/vars.css';
+
+.taskList {
+  padding: 20px 0;
+}
+
+.taskList__list {
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  list-style: none;
+}

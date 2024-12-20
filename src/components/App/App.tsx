@@ -4,6 +4,7 @@ import { Hero } from '../Hero/Hero';
 import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage';
 import { Category } from '../Category/Category';
 import { TaskList } from '../TaskList/TaskList';
+import { AddTaskModal } from '../AddTaskModal/AddTaskModal';
 
 const MainPage = () => {
   return (
@@ -12,6 +13,7 @@ const MainPage = () => {
       <Hero />
       <Category />
       <TaskList />
+      <AddTaskModal />
     </>
   );
 }
