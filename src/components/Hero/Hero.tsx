@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import c from './Hero.module.css';
 import { useSelector } from 'react-redux';
 

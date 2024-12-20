@@ -4,17 +4,28 @@ interface UserState {
   userName: string;
 }
 
+const getUserNameFromLocalStorage = (): UserState => {
+  const userName = localStorage.getItem("userName");
+  return { userName: userName ? JSON.parse(userName) : "Незнакомец" };
+};
+
+const initialState: UserState = getUserNameFromLocalStorage();
+
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    userName: "Незнакомец",
-  } as UserState,
+  initialState,
   reducers: {
     setName: (state, action: PayloadAction<string>) => {
-      state.userName = action.payload;
+      const userName = action.payload;
+      if (!userName || userName.trim() === "") {
+        state.userName = initialState.userName;
+      } else {
+        state.userName = userName;
+      }
+      localStorage.setItem("userName", JSON.stringify(state.userName));
     },
   },
-})
+});
 
 export const { setName } = userSlice.actions;
 export default userSlice.reducer;
